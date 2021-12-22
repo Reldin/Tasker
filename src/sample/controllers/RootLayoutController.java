@@ -28,7 +28,6 @@ public class RootLayoutController {
 
     public RootLayoutController(View view) {
         this.view = view;
-        view.test();
     }
 
     @FXML

@@ -87,8 +87,6 @@ public class TaskerController {
 
         fontSize.bind(BorderPane.widthProperty().add(BorderPane.heightProperty()).divide(120));
         BorderPane.styleProperty().bind(Bindings.concat("-fx-font-size: ", fontSize.asString(), ";"));
-        /*BorderListView.prefWidthProperty().bind(BorderPane.widthProperty().divide(2.5));*/
-        /*System.out.println(TaskTabPane.prefWidthProperty());*/
         TaskTabPane.prefWidthProperty().bind(BorderPane.widthProperty().add(BorderPane.heightProperty()).divide(6).add(1));
         TaskScrollPane.prefHeightProperty().bind(BorderPane.heightProperty().divide(3).add(1));
         TaskScrollPane.getContent().setOnScroll(scrollEvent ->  {
@@ -155,7 +153,7 @@ public class TaskerController {
     }
 
     /**
-     * Event to write a Task interface implementor to a file
+     * Event to add a Task interface implementor to the database
      * @param event event
      */
     @FXML
@@ -165,17 +163,8 @@ public class TaskerController {
     }
 
     /**
-     * Changes to the taskView that is generated with code.
-     * Basically puts the created GridPane and its children to the center of the parent
-     * BorderPane
-     * @param event event
+     * BorderPane changes to make the Task details to take all the possible space
      */
-    @FXML
-    void AddTaskView(ActionEvent event) {
-        BorderPane.setCenter(MainGrid);
-/*        BorderPane.setRight(BorderListView);*/
-    }
-
     @FXML
     void nodeManipulationTask() {
         BorderPane.getCenter().setManaged(false);
@@ -186,6 +175,9 @@ public class TaskerController {
         BorderPane.setCenter(TaskScrollPane);
     }
 
+    /**
+     * BorderPane changes back from the nodeManipulationTask
+     */
     @FXML
     void nodeLeaveManipulationTask(){
         BorderListView.refresh();
@@ -196,6 +188,11 @@ public class TaskerController {
         BorderPane.getLeft().setManaged(true);
     }
 
+    /**
+     * Event to delete task from the database.
+     * Uses the TaskManagementManager class to get access to the TaskDAO.
+     * @param selectedItem Task object from the ListView
+     */
     @FXML
     void deleteTask(Task selectedItem) {
         taskManagement.removeTask(selectedItem);
@@ -207,6 +204,12 @@ public class TaskerController {
 
     }
 
+    /**
+     * Event for editing a task
+     * @param selectedItem Task object from the ListView
+     * @param editedText Edited String from a TextArea
+     * @param editedTitle Edited String from a TextField
+     */
     @FXML
     void editTask(Task selectedItem, String editedText, String editedTitle) {
         taskManagement.editTask(selectedItem, editedTitle, editedText);
@@ -217,6 +220,9 @@ public class TaskerController {
 
     }
 
+    /**
+     * Creates a view to a Vbox node that shows details of a task from the ListView
+     */
     void showTaskDetails() {
         Task selectedItem = BorderListView.getSelectionModel().getSelectedItem();
         if(selectedItem != null) {
@@ -229,7 +235,6 @@ public class TaskerController {
             TextArea VBoxTextArea = new TextArea(selectedItem.getTask());
             VBoxTextArea.setEditable(false);
             VBoxTextArea.maxWidthProperty().bind(TaskVbox.widthProperty().divide(1.5));
-            /*VBoxTextArea.maxHeightProperty().bind(TaskScrollPane.heightProperty());*/
             VBoxTextArea.prefHeightProperty().bind(TaskScrollPane.heightProperty().divide(1.2));
             VBoxTextArea.setWrapText(true);
             VBox.setMargin(VBoxTextArea, new Insets(0, 0, 10, 0));
