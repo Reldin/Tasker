@@ -1,0 +1,128 @@
+
+.root {
+-fx-font-size: 20px;
+}
+
+
+.tool-bar:horizontal {
+-fx-background-color: #06054b;
+}
+
+.tool-bar:vertical {
+-fx-background-color: #E8175D;
+}
+
+.button{
+-fx-background-color: #06054b;
+-fx-text-fill: white;
+}
+
+.root-button {
+-fx-background-color: #06054b;
+}
+
+#mainGrid {
+-fx-background-color:  white;
+}
+
+#TaskViewAnchor {
+-fx-background-color:  #363636;
+}
+
+#listView {
+-fx-background-color: #06054b;
+}
+.list-view .list-cell:even {
+-fx-background-color: #06054b;
+-fx-text-fill: white;
+}
+.list-view .list-cell:active {
+-fx-background-color: black;
+-fx-text-fill: blue;
+}
+.list-view .list-cell:odd {
+-fx-background-color: #06054b;
+-fx-text-fill: white;
+}
+.button-with-margin {
+-fx-padding: 20px;
+-fx-border-insets: 20px;
+-fx-background-insets: 15px;
+}
+
+#whiteText {
+-fx-text-fill: black;
+}
+.taskVbox {
+-fx-background-color: white;
+-fx-text-fill: black;
+}
+.tab-pane .tab-header-area .tab-header-background {
+-fx-opacity: 1;
+-fx-background-color: #06054b;
+-fx-text-fill: white; /*.tab .tab-label sets the color*/
+}
+
+.tab-pane .tab {
+-fx-background-color: #06054b;
+-fx-text-fill: #01627F; /*.tab .tab-label sets the color*/
+-fx-alignment: CENTER;
+}
+.tab:selected :tab-label {
+   -fx-alignment: CENTER;
+   -fx-text-fill: #96b946; /*.tab .tab-label sets the color*/
+}
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+ /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em; /* overridden as 5 2 0 0 */
+    -fx-text-fill: #01627F; /*.tab .tab-label sets the color*/
+}
+/*
+Sets the tab text color and boldness
+*/
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #8FCBE6;
+    -fx-font-weight: bold;
+}
+
+.scroll-bar {
+-fx-background-color: #231F20;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: white;
+   -fx-border-color: black;
+}
+
+/*.text-area {
+-fx-control-inner-background: #363636;
+-fx-highlight-fill: white;
+-fx-highlight-text-fill: white;
+-fx-text-fill: white;
+-fx-border-color: #363636;
+-fx-background-color: #363636;
+}*/
+.mainTextArea {
+-fx-control-inner-background: white;
+-fx-highlight-fill: #A7226E;
+-fx-highlight-text-fill: white;
+-fx-text-fill: black;
+-fx-prompt-text-fill: black;
+}
+
+.text-field {
+-fx-control-inner-background: black;
+-fx-background-color: white;
+-fx-text-fill: black;
+-fx-prompt-text-fill: black;
+-fx-highlight-fill: #A7226E;
+-fx-highlight-text-fill: white;
+}
+
+.taskVboxTextArea {
+-fx-control-inner-background: #474747;
+-fx-text-fill: white;
+}
+

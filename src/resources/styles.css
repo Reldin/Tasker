@@ -1,0 +1,16 @@
+
+
+.root {
+-fx-font-size: 20px;
+}
+.test{
+-fx-background-color: #FFFFFFFF;
+}
+
+.toolbarClass {
+-fx-background-color: #000000FF;
+}
+
+.button{
+-fx-background-color: lightGreen;
+}

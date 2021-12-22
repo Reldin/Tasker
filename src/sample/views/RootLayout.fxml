@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="RootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="826.0" prefWidth="1049.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.RootLayoutController">
+   <top>
+      <ToolBar fx:id="RootToolBar" nodeOrientation="LEFT_TO_RIGHT" prefHeight="107.0" prefWidth="1398.0" BorderPane.alignment="CENTER">
+         <items>
+            <HBox alignment="CENTER_LEFT" prefHeight="73.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+               <children>
+                  <Button fx:id="AddTaskButton" mnemonicParsing="false" onAction="#AddTaskView" styleClass="root-button" text="Add Task" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="RootShutDownImageView" fitHeight="62.0" fitWidth="64.0" onMouseClicked="#shutDown" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/Actions-system-shutdown-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </items>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </ToolBar>
+   </top>
+   <stylesheets>
+      <URL value="@../../resources/anotherTaskCss.css" />
+      <URL value="@../../resources/rootCss.css" />
+   </stylesheets>
+</BorderPane>
