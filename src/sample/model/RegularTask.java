@@ -2,8 +2,7 @@ package sample.model;
 
 import java.io.Serializable;
 
-public class RegularTask implements Task, Serializable {
-    private double id;
+public class RegularTask implements Task {
     private String task;
     private String title;
     private boolean done = false;
@@ -14,12 +13,6 @@ public class RegularTask implements Task, Serializable {
         this.title = title;
         this.task = task;
 
-    }
-
-    public RegularTask(double id, String task, String title) {
-        this.id = id;
-        this.title = title;
-        this.task = task;
     }
 
     public String getTitle() {
@@ -40,14 +33,6 @@ public class RegularTask implements Task, Serializable {
         this.done = done;
     }
 
-    public double getId() {
-        return id;
-    }
-
-    public void setId(double id) {
-        this.id = id;
-    }
-
     public String getTask() {
         return task;
     }
@@ -56,15 +41,4 @@ public class RegularTask implements Task, Serializable {
         this.task = task;
     }
 
-    public boolean equals(Object o) {
-        if(!(o instanceof Task)) {
-            return false;
-        }
-        Task other = (RegularTask)o;
-        return id == other.getId() && task.equals(other.getTask());
-    }
-
-    public int hashCode() {
-        return task.hashCode();
-    }
 }

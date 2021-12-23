@@ -8,7 +8,7 @@ public interface TaskManagement {
     void addTask(Task task) throws IOException;
     void removeTask(Task task);
     List<Task> getTasks();
-    Task getTask(double id);
+    Task getTaskByTitle(String title);
     void editTask(Task givenTask, String editedTask, String editedTitle);
 
 }

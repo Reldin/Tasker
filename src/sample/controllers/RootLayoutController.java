@@ -32,9 +32,6 @@ public class RootLayoutController {
 
     @FXML
     protected void initialize() {
-        /*BackgroundSize bSize = new BackgroundSize(1.0, 1.0, true, true, false, false);
-        Background background = new Background(new BackgroundImage(new Image("disco.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, bSize));
-        RootBorderPane.setBackground(background);*/
         fontSize.bind(RootBorderPane.widthProperty().add(RootBorderPane.heightProperty()).divide(120));
         RootToolBar.styleProperty().bind(Bindings.concat("-fx-font-size: ", fontSize.asString(), ";"));
         RootToolBar.prefHeightProperty().bind(RootBorderPane.heightProperty().divide(14));

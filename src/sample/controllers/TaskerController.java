@@ -138,9 +138,7 @@ public class TaskerController {
      */
     void addToTaskListEvent() {
         if(!(TaskTextField.getText().isEmpty() && TaskTextField.getText().isBlank())) {
-            Random random = new Random();
-            double id = random.nextDouble() * 10;
-            Task task = new RegularTask(id, TaskTextArea.getText(), TaskTextField.getText());
+            Task task = new RegularTask(TaskTextArea.getText(), TaskTextField.getText());
 
             taskDAO.addTask(task);
             taskObservableList.add(task);
@@ -257,6 +255,10 @@ public class TaskerController {
                     TaskVbox.getChildren().remove(0);
                     TaskVbox.getChildren().add(0, label);
                     BorderListView.refresh();
+                    TaskVbox.getChildren().clear();
+                    if(TaskVbox.getChildren().size() == 0) {
+                        nodeLeaveManipulationTask();
+                    }
                 } else {
                     editButton.setText("Save Task");
                     editTextFieldTitle.setText(selectedItem.getTitle());

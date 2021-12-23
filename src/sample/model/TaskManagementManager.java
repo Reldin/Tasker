@@ -34,13 +34,9 @@ public class TaskManagementManager implements TaskManagement {
     }
 
     @Override
-    public Task getTask(double id) {
-        for(Task task : taskList) {
-            if(task.getId() == id) {
-                return task;
-            }
-        }
-        return null;
+    public Task getTaskByTitle(String title) {
+        Optional<Task> task = taskDAO.getTaskByTitle(title);
+        return task.orElse(null);
     }
 
     @Override
